@@ -17,11 +17,9 @@ $auth = new Auth($db);
 $validator = new Validator();
 
 $username = $_POST['username'] ?? '';
-$email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
 
 $validator->validateUsername($username);
-$validator->validateEmail($email);
 $validator->validatePassword($password);
 
 if ($validator->hasErrors()) {
@@ -34,11 +32,11 @@ if ($validator->hasErrors()) {
 }
 
 try {
-    if ($auth->register($username, $password, $email)) {
+    if ($auth->login($username, $password)) {
         echo json_encode(['success' => true]);
     } else {
-        echo json_encode(['success' => false, 'message' => 'Registration failed']);
+        echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
     }
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Registration failed']);
+    echo json_encode(['success' => false, 'message' => 'Login failed']);
 }

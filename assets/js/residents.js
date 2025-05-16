@@ -29,3 +29,28 @@ async function handleResidentSubmit(event) {
     event.preventDefault();
     // Add form submission logic here
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('updateMedicalInfo');
+
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch('../api/update_medical_info.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.message); // You can replace this with a styled alert box if needed
+            })
+            .catch(error => {
+                alert('An error occurred. Please try again.');
+                console.error(error);
+            });
+        });
+    }
+});
