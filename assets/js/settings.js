@@ -53,11 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         const formData = new FormData(profileForm);
 
-        // Validate current password
-        if (!formData.get('current_password')) {
+        // Client-side validation
+        const currentPassword = formData.get('current_password');
+        if (!currentPassword) {
             showError('Current password is required to save changes');
             return;
         }
+
+        // Show loading state
+        const submitButton = profileForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        showLoading('Updating profile...');
 
         // Send update request
         fetch('../api/update_profile.php', {
@@ -74,11 +80,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 2000);
                 }
             } else {
-                showError(data.message || 'Failed to update profile');
+                throw new Error(data.message || 'Failed to update profile');
             }
         })
         .catch(error => {
-            showError('An error occurred while updating profile');
+            showError(error.message || 'An error occurred while updating profile');
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+            hideLoading();
         });
     });
 

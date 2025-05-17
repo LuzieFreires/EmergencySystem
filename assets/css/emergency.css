@@ -1,0 +1,121 @@
+/* Emergency Alerts */
+.alerts-section {
+    grid-column: 1;
+    grid-row: 2;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.emergencies-grid {
+    display: grid;
+    gap: 15px;
+}
+
+
+/* Emergency Section Styles */
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.emergency-card {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s;
+}
+
+.emergency-card:hover {
+    transform: translateY(-2px);
+}
+
+.emergency-card.severity-critical { border-left: 4px solid #dc3545; }
+.emergency-card.severity-high { border-left: 4px solid #fd7e14; }
+.emergency-card.severity-medium { border-left: 4px solid #ffc107; }
+.emergency-card.severity-low { border-left: 4px solid #28a745; }
+
+.emergency-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.severity-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.emergency-details p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.emergency-description {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.emergency-actions {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .emergency-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem 0.5rem;
+    }
+    
+    .emergency-card {
+        padding: 1rem;
+    }
+}
+.emergency-section {
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f53e3e 100%);
+    color: white;
+}
+
+
+
+.emergency-header {
+    margin-bottom: 20px;
+}
+
+.emergency-header h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.emergency-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: white;
+    color: #f53e3e;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.emergency-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+.emergency-btn.pulse {
+    animation: pulse 2s infinite;
+}

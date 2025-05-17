@@ -1,0 +1,17 @@
+
+/* Logout button styles */
+.logout-item {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-item a {
+    color: #ff6b6b !important;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logout-item a:hover {
+    background-color: rgba(255, 107, 107, 0.1);
+}

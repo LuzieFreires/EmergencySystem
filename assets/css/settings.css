@@ -1,0 +1,55 @@
+/* Update nav-menu for logout positioning */
+.nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    padding: 1rem 0;
+}
+
+.theme-select {
+    padding: 0.5rem;
+    margin-left: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.theme-select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+  
+/* Profile Styles */
+.profile-info {
+    padding: 2rem;
+}
+
+.profile-details {
+    display: grid;
+    gap: 1rem;
+}
+
+.profile-details p {
+    margin: 0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-details strong {
+    color: var(--text-primary);
+    margin-right: 1rem;
+}
+
+/* Settings Form Styles */
+#profile-update-form {
+    margin-top: 1.5rem;
+}
+
+#profile-update-form .form-group {
+    margin-bottom: 1.5rem;
+}

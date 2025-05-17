@@ -4,15 +4,16 @@ require_once '../classes/Auth.php';
 
 header('Content-Type: application/json');
 
-// Verify authentication
+// Authenticate and authorize the user
 $auth = new Auth();
+
 if (!$auth->isAuthenticated() || !$auth->hasRole('responder')) {
     http_response_code(401);
     echo json_encode(['error' => 'Unauthorized']);
     exit;
 }
 
-$residentId = $_GET['resident_id'] ?? 0;
+$residentId = $_GET['resident_id'] ?? null;
 
 if (!$residentId) {
     http_response_code(400);

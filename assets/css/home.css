@@ -91,3 +91,93 @@ body {
     }
   }
   
+
+  
+.alert-history-item.alert-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-history-item.alert-error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-time {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.alert-message {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+/* Severity select styles */
+select#severity {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Emergency item styles */
+.emergency-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.emergency-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.emergency-severity {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+/* Severity colors */
+.severity-low {
+    border-left: 4px solid #4CAF50;
+}
+
+.severity-medium {
+    border-left: 4px solid #FFC107;
+}
+
+.severity-high {
+    border-left: 4px solid #FF5722;
+}
+
+.severity-critical {
+    border-left: 4px solid #f44336;
+}
+
+.emergency-severity.low {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+}
+
+.emergency-severity.medium {
+    background-color: #FFF8E1;
+    color: #FF8F00;
+}
+
+.emergency-severity.high {
+    background-color: #FBE9E7;
+    color: #D84315;
+}
+
+.emergency-severity.critical {
+    background-color: #FFEBEE;
+    color: #C62828;
+}
